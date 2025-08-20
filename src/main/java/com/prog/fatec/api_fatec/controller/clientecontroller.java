@@ -28,6 +28,12 @@ public String idade(@PathVariable int num){
         return "Menor de idade";
     }
 }
+
+    @PostMapping("")
+public String createCliente(RequestBody Cliente cliente){
+    return cliente.toString(); /* requestBody tipo/nome nome
+}
+
 }
 
 
