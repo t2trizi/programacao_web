@@ -2,6 +2,8 @@ package com.prog.fatec.api_fatec.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,8 +32,8 @@ public String idade(@PathVariable int num){
 }
 
     @PostMapping("")
-public String createCliente(RequestBody Cliente cliente){
-    return cliente.toString(); /* requestBody tipo/nome nome
+public String createCliente(RequestBody cliente){
+    return cliente.toString(); /* requestBody tipo/nome nome*/
 }
 
 }

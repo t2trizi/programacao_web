@@ -1,11 +1,11 @@
 package com.prog.fatec.api_fatec.entities;
 
-public class Cliente {
+public class cliente {
     private Long id;
    
     private String nome;
  
-    public Cliente() {
+    public cliente() {
        
     }
  
