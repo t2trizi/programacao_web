@@ -1,41 +1,39 @@
 package com.prog.fatec.api_fatec.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController /* qnd inicia, entende que a classe ira receber uma requisição*/
+import com.prog.fatec.api_fatec.entities.Cliente;
+
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+
+
+@RestController
 @RequestMapping("/api/clientes")
-public class clientecontroller {
+public class ClienteController {
 
-    @GetMapping("1")
-    public String testeCliente(){
-        return "Teste";
-    }    
-
-    @GetMapping("2/{nome}")
-public String testeCliente2(@PathVariable String nome){
-    return nome;
-}    
-
-    @GetMapping("3/{num}")
-public String idade(@PathVariable int num){
-    if (num>=18){
-        return "Maior de idade";
+    private final List<Cliente> listaCliente = new ArrayList<>(); //list<classe> nome = new instancia do tipo array
+    
+    @GetMapping("/testeCliente1") //-> /api/clientes/testeCliente1
+    public String testeCliente() {
+        return "Teste Client";
     }
-    else{
-        return "Menor de idade";
+
+    @GetMapping("/testeCliente2/{nome}") //-> /api/clientes/testeCliente2/
+    public String testeCliente2(@PathVariable String nome) {
+        return nome;
     }
-}
 
     @PostMapping("")
-public String createCliente(RequestBody cliente){
-    return cliente.toString(); /* requestBody tipo/nome nome*/
+    public String createCliente(@RequestBody Cliente cliente) {
+        return cliente.getNome();
+    }
+    
 }
-
-}
-
-
